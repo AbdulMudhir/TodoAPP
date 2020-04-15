@@ -64,15 +64,23 @@
       <button type="submit" class="btn btn-danger float-right"> Remove </button>
           </form>
 {% if info.mark %}
+
+           <form action="task_not_complete/{{ info.id }}/" method="post">
+                    {% csrf_token %}
+
+     <button type="submit" class="btn btn-light float-right"> Uncheck </button>
+          </form>
+
           {% else %}
+
       <form action="task_complete/{{ info.id }}/" method="post">
                     {% csrf_token %}
 
-     <button type="submit" class="btn btn-success float-right"> Mark </button>
+     <button type="submit" class="btn btn-success float-right"> Check </button>
           </form>
           {% endif %}
           </div>
-                   <small>Target date : {{ info.target_date }}</small>
+                   <small>Target date : {{ info.target_date.date }}</small>
 
   </a>
     {% endfor %}

@@ -36,11 +36,22 @@ def delete_task(request, task_id):
 
 
 def task_complete(request, task_id):
-
     if request.method == "POST":
 
         item = ToDoModel.objects.get(id=task_id)
         item.mark = True
+        item.save()
+
+        return redirect('/')
+    else:
+        return redirect('/')
+
+
+def task_not_complete(request, task_id):
+    if request.method == "POST":
+
+        item = ToDoModel.objects.get(id=task_id)
+        item.mark = False
         item.save()
 
         return redirect('/')
