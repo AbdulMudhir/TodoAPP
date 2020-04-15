@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 
-
+{% block nav %}
+{% endblock %}
 
 
 
@@ -11,7 +12,7 @@
 
 <div class="container" >
      <div class="border container bg-purple text-white small-form  mx-auto">
-<h1 class="font-weight-bold text-monospaceregister.html">Register</h1>
+<h1 class="font-weight-bold text-monospaceregister.html">Login</h1>
      </div>
 </div>
 
@@ -26,34 +27,21 @@
 
   <div class="form-group ">
 
-    <label >Username<span style="color:red;">*</span></label>
-    {{ form.username }}
+    <label >Username</label>
+    <input type="text" class='form-control' required="required">
 
       <div class="container-sm text-danger">{{ form.username.errors.as_text }} </div>
 </div>
 
          <div class="form-group">
-    <label >Email<span style="color:red;">*</span></label>
-    {{ form.email }}
-             {{ form.email.errors }}
-  </div>
-
-  <div class="form-group">
-    <label >Password<span style="color:red;">*</span></label>
-    {{ form.password1 }}
-      {{ form.password1.errors.as_text }}
-  </div>
-      <div class="form-group">
-    <label >Confirm Password<span style="color:red;">*</span></label>
-    {{ form.password2 }}
-
-          <div class="container">
-    {{ form.password2.errors}}</div>
-
+    <label >Password</label>
+    <input type="password" class='form-control' required="required">
   </div>
 
 
-  <button type="submit" class="btn bg-purple text-white btn-block">Register </button>
+
+
+  <button type="submit" class="btn bg-purple text-white btn-block"> Login </button>
 
 </form>
 

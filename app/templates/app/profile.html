@@ -17,10 +17,20 @@
 
 
 
-
-
 {% block nav %}
- <a href="../login" class="btn bg-light text-dark btn-block"> logout </a>
+
+{% if user.is_authenticated %}
+
+<form action="/logout/" method="post" style="padding:0px;margin:0px;">
+    {% csrf_token %}
+    <button type="submit" class="btn bg-light text-dark btn-block"> logout </button>
+    </form>
+
+{% else %}
+          <a href="../login" class="btn bg-light text-dark"> Login </a>
+          <a href="register/" class="btn bg-light text-dark"> Register </a>
+{% endif %}
+
 {% endblock %}
 
 

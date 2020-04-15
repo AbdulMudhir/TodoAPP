@@ -7,22 +7,43 @@
 
 {% endblock %}
 
-{% if user %}
-{% block nav %}
-<form action="/logout/{{ user }}" method="post" style="padding:0px;margin:0px;">
-   <a href="../login" class="btn bg-light text-dark btn-block"> logout </a>
-    </form>
+
+{% block main-nav %}
+
+{% if user.is_authenticated %}
+
+        <a class="nav-link text-white" href="/profile/{{ user }}">Profile <span class="sr-only">(current)</span></a>
+
+
+{% else %}
+
+
+{% endif %}
+
+
 {% endblock %}
+
+
+{% block nav %}
+
+{% if user.is_authenticated %}
+
+<form action="logout/" method="post" style="padding:0px;margin:0px;">
+    {% csrf_token %}
+    <button type="submit" class="btn bg-light text-dark btn-block"> logout </button>
+    </form>
 
 {% else %}
           <a href="../login" class="btn bg-light text-dark"> Login </a>
-          <a href="register/" class="btn bg-light text-dark"> Register </a>
+          <a href="register/" class="btn bg-light text-dark"> Sign up </a>
 {% endif %}
 
+{% endblock %}
 
 
 
 {% block body %}
+<h1>{{ user }}</h1>
 
 <h1> home page </h1>
 

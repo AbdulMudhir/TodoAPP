@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="383d50a9-b3c3-42de-83c4-1773cc2c0fe7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/templates/app/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/app/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
@@ -102,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586966506077</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="further changes">
+      <created>1586971872301</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586971872301</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -110,22 +117,23 @@
     <MESSAGE value="styling registeration form" />
     <MESSAGE value="register page complete" />
     <MESSAGE value="added user's for managing to do list" />
-    <option name="LAST_COMMIT_MESSAGE" value="added user's for managing to do list" />
+    <MESSAGE value="further changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="further changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1586966505315">
+    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1586971871572">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586966505315" />
+    <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586971871572" />
     <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586913049817" />
     <state x="1350" y="353" key="SettingsEditor" timestamp="1586896399792">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1350" y="353" key="SettingsEditor/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586896399792" />
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1586966507392">
+    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1586971873696">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586966507392" />
+    <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586971873696" />
     <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586913051703" />
     <state x="1161" y="407" width="672" height="678" key="search.everywhere.popup" timestamp="1586898050562">
       <screen x="0" y="0" width="2560" height="1400" />

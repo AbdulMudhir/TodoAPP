@@ -5,7 +5,7 @@ from datetime import datetime
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegistrationForm
 from django.contrib.auth.models import User
-
+from django.contrib.auth import logout,login, authenticate
 
 # Create your views here.
 
@@ -43,6 +43,12 @@ def task_complete(request, task_id):
         return redirect('/')
 
 
+def logout_profile(request):
+    if request.method == "POST":
+        print("i amhere")
+        logout(request)
+        return redirect('/')
+
 
 def task_not_complete(request, task_id):
     if request.method == "POST":
@@ -56,11 +62,7 @@ def task_not_complete(request, task_id):
         return redirect('/')
 
 
-def login(request):
-    if request.method == "GET":
-
-        if request.user.is_authenticated:
-            return redirect(f'/profile/{request.user.username}/')
+def login_profile(request):
 
     return render(request, 'app/login.html')
 
