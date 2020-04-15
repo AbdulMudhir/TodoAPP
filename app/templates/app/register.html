@@ -6,49 +6,59 @@
 
 
 {% block body %}
+
 <br>
-<div class="container bg-purple perfect-centering ">
+
+<div class="container" >
+     <div class="border container bg-purple text-white small-form  mx-auto">
+<h1>Register</h1>
+     </div>
+</div>
+
+<div class="container">
+
+    <div class="border container bg-light  small-form  mx-auto">
     <br>
 
-    <div class="registeration-form container ">
-<form  method="post">
+<form method="post">
+
     {% csrf_token %}
 
-  <div class="form-group row ">
-    <div class="col-sm-10">
-          {{ form.username }}
-    </div>
-  </div>
+  <div class="form-group ">
 
+    <label >Username<span style="color:red;">*</span></label>
+    {{ form.username }}
 
-  <div class="form-group row ">
-    <div class="col-sm-10">
-          {{ form.email }}
-    </div>
-  </div>
-
-
-
-  <div class="form-group row">
-    <div class="col-sm-10">
-        {{ form.errors }}
-      {{ form.password1 }}
-    </div>
-
-  </div>
-<div class="form-group row">
-
-    <div class="col-sm-10">
-      {{ form.password2 }}
-    </div>
+      <div class="container-sm text-danger">{{ form.username.errors.as_text }} </div>
 </div>
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Register</button>
-    </div>
+
+         <div class="form-group">
+    <label >Email<span style="color:red;">*</span></label>
+    {{ form.email }}
+             {{ form.email.errors }}
   </div>
+
+  <div class="form-group">
+    <label >Password<span style="color:red;">*</span></label>
+    {{ form.password1 }}
+      {{ form.password1.errors.as_text }}
+  </div>
+      <div class="form-group">
+    <label >Confirm Password<span style="color:red;">*</span></label>
+    {{ form.password2 }}
+
+          <div class="container">
+    {{ form.password2.errors}}</div>
+
+  </div>
+
+
+  <button type="submit" class="btn bg-purple text-white btn-block">Register </button>
+
 </form>
+
+        </div>
 </div>
-<br>
-    </div>
+
+
 {% endblock %}

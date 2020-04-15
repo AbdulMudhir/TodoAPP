@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import RegistrationForm
 from django.contrib.auth.models import User
 
+
 # Create your views here.
 
 
@@ -66,16 +67,21 @@ def login(request):
 
 
 def register(request):
+    if request.method == "POST":
 
-    registered_user = RegistrationForm(request.POST)
+        registered_user = RegistrationForm(request.POST)
 
-    if registered_user.is_valid():
+        if registered_user.is_valid():
 
-        registered_user.save()
+            registered_user.save()
 
-        return redirect('/login/')
+            return redirect('/login/')
+
+        else:
+
+            return render(request, 'app/register.html', {'form': registered_user})
+
+
 
     else:
         return render(request, 'app/register.html', {'form': RegistrationForm})
-
-

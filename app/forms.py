@@ -26,16 +26,16 @@ class ToDoForm(forms.ModelForm):
 
 
 class RegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    username = forms.CharField(widget=forms.TextInput(attrs={'class': '',
-                                                             'placeholder': 'Username'
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
+                                                              }), required=True)
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
                                                              }), required=True)
-    password1 = forms.CharField(widget=forms.TextInput(attrs={'class': '',
-                                                              'placeholder': 'Password'
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control',
                                                               }), required=True)
-    password2 = forms.CharField(widget=forms.TextInput(attrs={'class': '',
-                                                              'placeholder': 'Confirm Password'
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control',
                                                               }), required=True)
+
+
 
     class Meta:
         model = User
