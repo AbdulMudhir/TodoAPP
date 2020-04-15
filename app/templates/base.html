@@ -1,15 +1,47 @@
-
+{% load static %}
 
 <head>
     {% block head %}
     <title>base</title>
     {% endblock %}
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+        <link rel="stylesheet" href="{% static 'app/css/stylesheet.css' %}" >
+
+
 </head>
 
-{% block body %}
-<body>
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#800080;">
 
-</body>
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav" >
+        {% block nav %}
+
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only" >(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+        {% endblock %}
+
+    </div>
+       {% block auth %}
+        <div class="container float-right">
+              <a class="nav-item float-right " href="#">Login</a>
+            </div>
+
+        {% endblock %}
+
+  </div>
+</nav>
+
+
+
+{% block body %}
+
+
 {% endblock %}

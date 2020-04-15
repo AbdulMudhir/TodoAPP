@@ -1,0 +1,20 @@
+
+
+.bg-purple{
+background-color:#800080;
+}
+
+ .perfect-centering {
+     position: absolute;
+     top: 50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+   }
+
+
+ .child-centering {
+     position: realtive;
+     top: 50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+   }

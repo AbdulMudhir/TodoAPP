@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+
+
+
+
+{% block body %}
+<br>
+<div class="container bg-purple perfect-centering ">
+    <br>
+
+    <div class="registeration-form container ">
+<form  method="post">
+    {% csrf_token %}
+
+  <div class="form-group row ">
+    <div class="col-sm-10">
+          {{ form.username }}
+    </div>
+  </div>
+
+
+  <div class="form-group row ">
+    <div class="col-sm-10">
+          {{ form.email }}
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+        {{ form.errors }}
+      {{ form.password1 }}
+    </div>
+
+  </div>
+<div class="form-group row">
+
+    <div class="col-sm-10">
+      {{ form.password2 }}
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+</form>
+</div>
+<br>
+    </div>
+{% endblock %}

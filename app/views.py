@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import ToDoForm
 from .models import ToDoModel
 from datetime import datetime
-
+from django.contrib.auth.forms import UserCreationForm
+from .forms import RegistrationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -57,3 +59,23 @@ def task_not_complete(request, task_id):
         return redirect('/')
     else:
         return redirect('/')
+
+
+def login(request):
+    return render(request, 'app/login.html')
+
+
+def register(request):
+
+    registered_user = RegistrationForm(request.POST)
+
+    if registered_user.is_valid():
+
+        registered_user.save()
+
+        return redirect('/login/')
+
+    else:
+        return render(request, 'app/register.html', {'form': RegistrationForm})
+
+
