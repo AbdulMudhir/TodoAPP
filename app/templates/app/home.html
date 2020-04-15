@@ -1,0 +1,83 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Home</title>
+
+
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#800080;">
+
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav" >
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only" >(current)</span></a>
+      <a class="nav-item nav-link" href="#">Features</a>
+
+    </div>
+  </div>
+</nav>
+
+<br>
+
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+    {{ form.as_p }}
+        <div class="container">
+        <button type="submit" class="btn btn-success"> Submit </button>
+            <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+        </form>
+
+</div>
+
+<div class="container">
+<div class="list-group">
+    {% for info in data %}
+
+
+    {% if info.mark %}
+    <a  class="list-group-item list-group-item-action flex-column align-items-start bg-success text-white">
+    {% else %}
+         <a  class="list-group-item list-group-item-action flex-column align-items-start ">
+        {% endif %}
+
+    <div class="d-flex w-100 justify-content-between ">
+      <h5 class="mb-1"> {{ info.title }}</h5>
+      <small> Created on: {{ info.date_created }}</small>
+    </div>
+    <p class="mb-1">{{ info.content }}</p>
+
+      <div class="container bg-danger">
+
+      <form action="delete_task/{{ info.id }}/" method="post">
+          {% csrf_token %}
+      <button type="submit" class="btn btn-danger float-right"> Remove </button>
+          </form>
+{% if info.mark %}
+          {% else %}
+      <form action="task_complete/{{ info.id }}/" method="post">
+                    {% csrf_token %}
+
+     <button type="submit" class="btn btn-success float-right"> Mark </button>
+          </form>
+          {% endif %}
+          </div>
+                   <small>Target date : {{ info.target_date }}</small>
+
+  </a>
+    {% endfor %}
+</div>
+</div>
+
+
+{% endblock %}
