@@ -13,32 +13,34 @@
 
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#800080;">
 
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-purple ">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">Hidden brand</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+          {% block main-nav %}
+        <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
+          {% endblock %}
+      </li>
 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav" >
-        {% block nav %}
+    </ul>
 
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only" >(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-        {% endblock %}
 
-    </div>
-       {% block auth %}
-        <div class="container float-right">
-              <a class="nav-item float-right " href="#">Login</a>
-            </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+                  {% block nav %}
 
-        {% endblock %}
+          <a href="../login" class="btn bg-light text-dark"> Login </a>
+          <a href="register/" class="btn bg-light text-dark"> Register </a>
+          {% endblock %}
+
+</div>
 
   </div>
 </nav>
-
 
 
 {% block body %}

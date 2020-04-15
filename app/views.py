@@ -11,24 +11,12 @@ from django.contrib.auth.models import User
 
 
 def home(request):
-    data = {'form': ToDoForm,
-            'data': ToDoModel.objects.all().order_by('mark'),
-            'today': datetime.today()}
+    if request.method == "GET":
+        if request.user.is_authenticated:
+            return render(request, 'app/home.html', {'user': request.user})
 
-    if request.method == "POST":
-        form = ToDoForm(request.POST)
-
-        if form.is_valid():
-
-            # populating the user id that is logged in
-            current_form = form.save(commit=False)
-            current_form.username_id = request.user.id
-
-            current_form.save()
-
-            return redirect('/')
-
-    return render(request, 'app/home.html', data)
+        else:
+            return render(request, 'app/home.html')
 
 
 def delete_task(request, task_id):
@@ -55,6 +43,7 @@ def task_complete(request, task_id):
         return redirect('/')
 
 
+
 def task_not_complete(request, task_id):
     if request.method == "POST":
 
@@ -71,9 +60,29 @@ def login(request):
     if request.method == "GET":
 
         if request.user.is_authenticated:
-            return redirect('/')
+            return redirect(f'/profile/{request.user.username}/')
 
     return render(request, 'app/login.html')
+
+
+def profile(request, user_id):
+    data = {'form': ToDoForm,
+            'data': ToDoModel.objects.all().order_by('mark'),
+            'today': datetime.today()}
+
+    if request.method == "POST":
+        form = ToDoForm(request.POST)
+
+        if form.is_valid():
+            # populating the user id that is logged in
+            current_form = form.save(commit=False)
+            current_form.username_id = request.user.id
+
+            current_form.save()
+
+            return redirect(f'/profile/{user_id}/')
+
+    return render(request, 'app/profile.html', data)
 
 
 def register(request):

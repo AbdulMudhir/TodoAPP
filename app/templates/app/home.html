@@ -5,91 +5,26 @@
 
 <title>Home</title>
 
-
 {% endblock %}
 
-
-
-
-
+{% if user %}
 {% block nav %}
+<form action="/logout/{{ user }}" method="post" style="padding:0px;margin:0px;">
+   <a href="../login" class="btn bg-light text-dark btn-block"> logout </a>
+    </form>
 {% endblock %}
 
-
-
-
-
-
-
+{% else %}
+          <a href="../login" class="btn bg-light text-dark"> Login </a>
+          <a href="register/" class="btn bg-light text-dark"> Register </a>
+{% endif %}
 
 
 
 
 {% block body %}
 
-
-<br>
-
-<div class="container">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.title }}
-         {{ form.content }}
-         {{ form.target_date }}
-        <div class="container">
-        <button type="submit" class="btn btn-success"> Submit </button>
-            <button type="reset" class="btn btn-secondary">Clear</button>
-            </div>
-        </form>
-
-</div>
-
-<div class="container">
-<div class="list-group">
-    {% for info in data %}
-
-
-    {% if info.mark %}
-    <a  class="list-group-item list-group-item-action flex-column align-items-start bg-success text-white">
-    {% else %}
-         <a  class="list-group-item list-group-item-action flex-column align-items-start ">
-        {% endif %}
-
-    <div class="d-flex w-100 justify-content-between ">
-      <h5 class="mb-1"> {{ info.title }}</h5>
-      <small> Created on: {{ info.date_created }}</small>
-    </div>
-    <p class="mb-1">{{ info.content }}</p>
-
-      <div class="container bg-danger">
-
-      <form action="delete_task/{{ info.id }}/" method="post">
-          {% csrf_token %}
-      <button type="submit" class="btn btn-danger float-right"> Remove </button>
-          </form>
-{% if info.mark %}
-
-           <form action="task_not_complete/{{ info.id }}/" method="post">
-                    {% csrf_token %}
-
-     <button type="submit" class="btn btn-light float-right"> Uncheck </button>
-          </form>
-
-          {% else %}
-
-      <form action="task_complete/{{ info.id }}/" method="post">
-                    {% csrf_token %}
-
-     <button type="submit" class="btn btn-success float-right"> Check </button>
-          </form>
-          {% endif %}
-          </div>
-                   <small>Target date : {{ info.target_date.date }}</small>
-
-  </a>
-    {% endfor %}
-</div>
-</div>
+<h1> home page </h1>
 
 
 {% endblock %}

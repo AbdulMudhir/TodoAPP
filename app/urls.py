@@ -9,5 +9,7 @@ urlpatterns =[
     path('task_not_complete/<int:task_id>/', views.task_not_complete, name='task_not_complete'),
     path('login/', views.login , name="login"),
     path('register/', views.register, name="register"),
+    path('profile/<str:user_id>/', views.profile, name='profile'),
+    path('logout/<str:user_id>/', views.logout, name='profile'),
 
 ]
