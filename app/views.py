@@ -20,29 +20,39 @@ def home(request):
             return render(request, 'app/home.html')
 
 
-def delete_task(request, task_id):
+def delete_task(request, item_id, user):
+
     if request.method == "POST":
 
-        form = ToDoModel.objects.get(id=task_id)
-        form.delete()
+        task =ToDoModel.objects.get(username_id = request.user.id,  id=item_id)
 
-        return redirect('/')
-
-    else:
-        return redirect('/')
+        task.delete()
+        return redirect(f'/profile/{request.user}/')
 
 
-def task_complete(request, task_id):
+    if request.method == "GET":
+
+        if request.user.is_authenticated:
+
+            return redirect(f'/profile/{request.user}/')
+
+        else:
+
+            return redirect('/login')
+
+
+def task_complete(request, item_id, user):
+
+
     if request.method == "POST":
 
-        item = ToDoModel.objects.get(id=task_id)
+        item = ToDoModel.objects.get(username_id = request.user.id, id=item_id)
         item.mark = True
         item.save()
 
-        return redirect('/')
+        return redirect(f'/profile/{request.user}/')
     else:
-        return redirect('/')
-
+        return redirect(f'/profile/{request.user}/')
 
 def logout_profile(request):
     if request.method == "POST":
@@ -76,7 +86,6 @@ def login_profile(request):
             return redirect('/')
 
         else:
-            print(user)
             return render(request, 'app/login.html', {'error': 'Username or Password is incorrect'})
 
     return render(request, 'app/login.html')
@@ -84,13 +93,14 @@ def login_profile(request):
 
 def profile(request, user):
 
-    users_to_do_list = ToDoModel.objects.filter(username_id=request.user.id).order_by('mark')
+    users_to_do_list = ToDoModel.objects.filter(username_id=request.user.id).order_by('mark','-date_created')
 
     data = {'form': ToDoForm,
             'data': users_to_do_list,
             'today': datetime.today()}
 
     if request.method == "POST":
+
         form = ToDoForm(request.POST)
 
         if form.is_valid():
@@ -100,14 +110,17 @@ def profile(request, user):
 
             current_form.save()
 
-            return redirect(f'/profile/{user}/')
+            return redirect(f'/profile/{request.user}/')
+
+        else:
+            return redirect(f'/profile/{request.user}/', form)
 
     if request.method == "GET":
 
         if not request.user.is_authenticated:
             return redirect('/login')
         else:
-            return redirect(f'/profile/{user}/')
+            return render(request, 'app/profile.html', data)
 
 
 

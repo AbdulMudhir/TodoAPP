@@ -39,21 +39,34 @@
 
 <br>
 
-<div class="container">
+<div class="container bg-light border">
+    <br>
     <form method="post">
         {% csrf_token %}
+        <div class="title">
+        <h6> Title </h6>
         {{ form.title }}
+            </div>
+        <div class="content">
+        <h6> To Do List </h6>
          {{ form.content }}
+                    </div>
+
+        <div class="target-date">
+        <h6> Target Date </h6>
+
          {{ form.target_date }}
-        <div class="container">
+    </div>
+        <br>
         <button type="submit" class="btn btn-success"> Submit </button>
             <button type="reset" class="btn btn-secondary">Clear</button>
-            </div>
         </form>
 
 </div>
 
-<div class="container">
+<br>
+<div class="container bg-light border">
+    <Br>
 <div class="list-group">
     {% for info in data %}
 
@@ -72,7 +85,7 @@
 
       <div class="container bg-danger">
 
-      <form action="delete_task/{{ info.id }}/" method="post">
+      <form action="/profile/{{ user }}/delete_task/{{ info.id }}/" method="post">
           {% csrf_token %}
       <button type="submit" class="btn btn-danger float-right"> Remove </button>
           </form>
@@ -98,6 +111,7 @@
   </a>
     {% endfor %}
 </div>
+    <Br>
 </div>
 
 
