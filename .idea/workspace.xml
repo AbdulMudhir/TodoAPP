@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="383d50a9-b3c3-42de-83c4-1773cc2c0fe7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/app/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586971872301</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="login page desinged">
+      <created>1586979153967</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586979153967</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,23 +120,24 @@
     <MESSAGE value="register page complete" />
     <MESSAGE value="added user's for managing to do list" />
     <MESSAGE value="further changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="further changes" />
+    <MESSAGE value="login page desinged" />
+    <option name="LAST_COMMIT_MESSAGE" value="login page desinged" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1586971871572">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2934" y="25" key="CommitChangelistDialog2" timestamp="1586979153148">
+      <screen x="2560" y="0" width="1440" height="860" />
     </state>
     <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586971871572" />
-    <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586913049817" />
+    <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586979153148" />
     <state x="1350" y="353" key="SettingsEditor" timestamp="1586896399792">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1350" y="353" key="SettingsEditor/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586896399792" />
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1586971873696">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2872" y="164" key="Vcs.Push.Dialog.v2" timestamp="1586979156194">
+      <screen x="2560" y="0" width="1440" height="860" />
     </state>
     <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586971873696" />
-    <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586913051703" />
+    <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586979156194" />
     <state x="1161" y="407" width="672" height="678" key="search.everywhere.popup" timestamp="1586898050562">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
