@@ -10,6 +10,8 @@ class ToDoForm(forms.ModelForm):
     content = forms.CharField(required=True)
     target_date = forms.DateTimeField(required=True, widget=DateTimePicker())
 
+
+
     class Meta:
         model = ToDoModel
         widgets = {
@@ -17,7 +19,6 @@ class ToDoForm(forms.ModelForm):
         }
 
         fields = [
-
             'title',
             'content',
             'target_date',
@@ -25,11 +26,13 @@ class ToDoForm(forms.ModelForm):
         ]
 
 
+
+
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control',
                                                               }), required=True)
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
-                                                             }), required=True)
+                                                             }), required=True, max_length=25)
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control',
                                                               }), required=True)
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control',

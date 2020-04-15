@@ -33,7 +33,9 @@
 <div class="container">
     <form method="post">
         {% csrf_token %}
-    {{ form.as_p }}
+        {{ form.title }}
+         {{ form.content }}
+         {{ form.target_date }}
         <div class="container">
         <button type="submit" class="btn btn-success"> Submit </button>
             <button type="reset" class="btn btn-secondary">Clear</button>

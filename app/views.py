@@ -16,11 +16,16 @@ def home(request):
             'today': datetime.today()}
 
     if request.method == "POST":
-
         form = ToDoForm(request.POST)
 
         if form.is_valid():
-            form.save()
+
+            # populating the user id that is logged in
+            current_form = form.save(commit=False)
+            current_form.username_id = request.user.id
+
+            current_form.save()
+
             return redirect('/')
 
     return render(request, 'app/home.html', data)
@@ -63,6 +68,11 @@ def task_not_complete(request, task_id):
 
 
 def login(request):
+    if request.method == "GET":
+
+        if request.user.is_authenticated:
+            return redirect('/')
+
     return render(request, 'app/login.html')
 
 
