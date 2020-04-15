@@ -77,11 +77,16 @@
          <a  class="list-group-item list-group-item-action flex-column align-items-start ">
         {% endif %}
 
-    <div class="d-flex w-100 justify-content-between ">
-      <h5 class="mb-1"> {{ info.title }}</h5>
+    <div class="d-flex w-100 justify-content-between "  style="border-bottom:1px solid;">
+
+      <h5 class="mb-1"> {{ info.title|capfirst }}</h5>
       <small> Created on: {{ info.date_created }}</small>
     </div>
+             <div class="container border">
+
     <p class="mb-1">{{ info.content }}</p>
+
+                 </div>
 
       <div class="container bg-danger">
 
@@ -90,6 +95,7 @@
       <button type="submit" class="btn btn-danger float-right"> Remove </button>
           </form>
 {% if info.mark %}
+
 
            <form action="task_not_complete/{{ info.id }}/" method="post">
                     {% csrf_token %}
@@ -103,16 +109,21 @@
                     {% csrf_token %}
 
      <button type="submit" class="btn btn-success float-right"> Check </button>
+
+
+
           </form>
+
+
           {% endif %}
           </div>
                    <small>Target date : {{ info.target_date.date }}</small>
 
   </a>
+        <br>
     {% endfor %}
 </div>
-    <Br>
 </div>
 
-
+<Br>
 {% endblock %}

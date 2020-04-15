@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="383d50a9-b3c3-42de-83c4-1773cc2c0fe7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/app/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
@@ -129,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586982952160</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="users only see their task">
+      <created>1586989091321</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586989091321</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,22 +145,23 @@
     <MESSAGE value="login page desinged" />
     <MESSAGE value="login system functioning" />
     <MESSAGE value="login page fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="login page fixed" />
+    <MESSAGE value="users only see their task" />
+    <option name="LAST_COMMIT_MESSAGE" value="users only see their task" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1586982951347">
+    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1586989090532">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586982951347" />
+    <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586989090532" />
     <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586979153148" />
     <state x="1350" y="353" key="SettingsEditor" timestamp="1586896399792">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1350" y="353" key="SettingsEditor/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586896399792" />
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1586982953844">
+    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1586989092513">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586982953844" />
+    <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586989092513" />
     <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586979156194" />
     <state x="1161" y="407" width="672" height="678" key="search.everywhere.popup" timestamp="1586898050562">
       <screen x="0" y="0" width="2560" height="1400" />

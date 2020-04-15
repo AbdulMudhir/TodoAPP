@@ -21,14 +21,11 @@ def home(request):
 
 
 def delete_task(request, item_id, user):
-
     if request.method == "POST":
-
-        task =ToDoModel.objects.get(username_id = request.user.id,  id=item_id)
+        task = ToDoModel.objects.get(username_id=request.user.id, id=item_id)
 
         task.delete()
         return redirect(f'/profile/{request.user}/')
-
 
     if request.method == "GET":
 
@@ -42,17 +39,24 @@ def delete_task(request, item_id, user):
 
 
 def task_complete(request, item_id, user):
-
-
     if request.method == "POST":
 
-        item = ToDoModel.objects.get(username_id = request.user.id, id=item_id)
+        item = ToDoModel.objects.get(username_id=request.user.id, id=item_id)
         item.mark = True
         item.save()
 
         return redirect(f'/profile/{request.user}/')
-    else:
-        return redirect(f'/profile/{request.user}/')
+
+    if request.method == "GET":
+
+        if request.user.is_authenticated:
+
+            return redirect(f'/profile/{request.user}/')
+
+        else:
+
+            return redirect('/login')
+
 
 def logout_profile(request):
     if request.method == "POST":
@@ -60,16 +64,24 @@ def logout_profile(request):
         return redirect('/')
 
 
-def task_not_complete(request, task_id):
-    if request.method == "POST":
+def task_not_complete(request, item_id, user):
 
-        item = ToDoModel.objects.get(id=task_id)
+    if request.method == "POST":
+        item = ToDoModel.objects.get(username_id=request.user.id, id=item_id)
         item.mark = False
         item.save()
 
-        return redirect('/')
-    else:
-        return redirect('/')
+        return redirect(f'/profile/{request.user}/')
+
+    if request.method == "GET":
+
+        if request.user.is_authenticated:
+
+            return redirect(f'/profile/{request.user}/')
+
+        else:
+
+            return redirect('/login')
 
 
 def login_profile(request):
@@ -92,8 +104,7 @@ def login_profile(request):
 
 
 def profile(request, user):
-
-    users_to_do_list = ToDoModel.objects.filter(username_id=request.user.id).order_by('mark','-date_created')
+    users_to_do_list = ToDoModel.objects.filter(username_id=request.user.id).order_by('mark', '-date_created')
 
     data = {'form': ToDoForm,
             'data': users_to_do_list,
@@ -121,7 +132,6 @@ def profile(request, user):
             return redirect('/login')
         else:
             return render(request, 'app/profile.html', data)
-
 
 
 def register(request):
