@@ -5,7 +5,8 @@ from datetime import datetime
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegistrationForm
 from django.contrib.auth.models import User
-from django.contrib.auth import logout,login, authenticate
+from django.contrib.auth import logout, login, authenticate
+
 
 # Create your views here.
 
@@ -45,7 +46,6 @@ def task_complete(request, task_id):
 
 def logout_profile(request):
     if request.method == "POST":
-        print("i amhere")
         logout(request)
         return redirect('/')
 
@@ -63,8 +63,7 @@ def task_not_complete(request, task_id):
 
 
 def login_profile(request):
-
-    if request.method=="POST":
+    if request.method == "POST":
 
         username = request.POST['username']
         password = request.POST['password']
@@ -76,13 +75,19 @@ def login_profile(request):
 
             return redirect('/')
 
+        else:
+            print(user)
+            return render(request, 'app/login.html', {'error': 'Username or Password is incorrect'})
 
     return render(request, 'app/login.html')
 
 
-def profile(request, user_id):
+def profile(request, user):
+
+    users_to_do_list = ToDoModel.objects.filter(username_id=request.user.id).order_by('mark')
+
     data = {'form': ToDoForm,
-            'data': ToDoModel.objects.all().order_by('mark'),
+            'data': users_to_do_list,
             'today': datetime.today()}
 
     if request.method == "POST":
@@ -95,9 +100,15 @@ def profile(request, user_id):
 
             current_form.save()
 
-            return redirect(f'/profile/{user_id}/')
+            return redirect(f'/profile/{user}/')
 
-    return render(request, 'app/profile.html', data)
+    if request.method == "GET":
+
+        if not request.user.is_authenticated:
+            return redirect('/login')
+        else:
+            return redirect(f'/profile/{user}/')
+
 
 
 def register(request):
