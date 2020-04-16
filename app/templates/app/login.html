@@ -4,7 +4,9 @@
 {% block side-nav %}
 {% endblock %}
 
-
+ {% block head %}
+    <title>Login</title>
+    {% endblock %}
 {% block body %}
 
 <br>
@@ -38,7 +40,9 @@
     <input type="password" class='form-control' required="required" name="password">
 
                <div class="container text-success text-center" style="margin-top:5px;">
-           {{ success }}
+           {% for message in messages %}
+                   {{ message }}
+                   {% endfor %}
        </div>
 
   </div>
@@ -47,8 +51,9 @@
 
 
   <button type="submit" class="btn bg-purple text-white btn-block"> LOGIN </button>
-
-
+    <div style="margin-top:5px;">
+    <a href="/password_reset">forgot password? </a>
+    </div>
 </form>
 
         </div>
@@ -56,7 +61,6 @@
 
 
 <br>
-
 <div class="container">
 
     <div class="border container bg-light  small-form  mx-auto">
@@ -73,6 +77,5 @@
 
         </div>
 </div>
-
 
 {% endblock %}

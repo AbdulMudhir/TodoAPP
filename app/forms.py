@@ -91,12 +91,21 @@ class RegistrationForm(UserCreationForm):
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
-
-        if User.objects.filter(email=email).exists():
+        # check if email exist this counts towards capital
+        if User.objects.filter(email__iexact=email).exists():
             raise forms.ValidationError("The email has already been used.")
 
         else:
             return email
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+
+        if User.objects.filter(username__iexact=username).exists():
+            raise forms.ValidationError('A user with that username already exists.')
+
+        else:
+            return username
 
 
     def save(self, commit=True):
@@ -105,3 +114,5 @@ class RegistrationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+

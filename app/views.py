@@ -1,6 +1,9 @@
 from datetime import datetime
 
+from django.http import HttpRequest
 from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordResetForm
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -162,8 +165,8 @@ def register(request):
         if registered_user.is_valid():
 
             registered_user.save()
-
-            return render(request,'app/login.html', {'success': 'Your account has been created successfully'})
+            messages.success(request, 'Your account has been created successfully.')
+            return redirect('/login')
 
         else:
 
@@ -176,3 +179,32 @@ def register(request):
 
         else:
             return render(request, 'app/register.html', {'form': RegistrationForm})
+
+
+# def password_reset(request):
+#     if request.method == "POST":
+#         email = request.POST['email']
+#
+#         form = PasswordResetForm({'email': email})
+#
+#         if form.is_valid():
+#
+#             if User.objects.filter(email__iexact=email).exists():
+#
+#                 form.send_mail(subject_template_name="app/login.html",
+#                                from_email="todolistprojectgit@gmail.com",
+#                                to_email=email,
+#                                context=None,
+#                                email_template_name="app/login.html")
+#
+#                 #form.save()
+#
+#
+#
+#
+#         return redirect('/forgot_password/done')
+#     return render(request, 'app/password_reset.html')
+#
+# def password_reset_sent(request):
+#
+#     return render(request, 'app/password_reset_sent.html')
