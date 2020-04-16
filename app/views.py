@@ -1,23 +1,38 @@
+from datetime import datetime
+
+from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
 from django.shortcuts import render, redirect
+
+from .forms import RegistrationForm, PasswordChangeForms
 from .forms import ToDoForm
 from .models import ToDoModel
-from datetime import datetime
-from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationForm
-from django.contrib.auth.models import User
-from django.contrib.auth import logout, login, authenticate
 
 
 # Create your views here.
 
 
-def home(request):
-    if request.method == "GET":
-        if request.user.is_authenticated:
-            return render(request, 'app/home.html', {'user': request.user})
+def password_change(request, user):
+    if request.method == "POST":
+
+        form = PasswordChangeForms(user = request.user, data=request.POST)
+
+        if form.is_valid():
+
+            form.save()
+            update_session_auth_hash(request, form.user)
+
+            return redirect('/')
 
         else:
-            return render(request, 'app/home.html')
+            return render(request, 'app/password_change.html', {'form': form})
+
+    if request.method == "GET":
+
+        if request.user.is_authenticated:
+            return render(request, 'app/password_change.html', {'form': PasswordChangeForms(user= request.user)})
+
+        else:
+            return render(request, 'app/password_change.html', {'form': PasswordChangeForms(user=request.user)})
 
 
 def delete_task(request, item_id, user):

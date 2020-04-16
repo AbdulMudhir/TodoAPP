@@ -3,9 +3,31 @@ from django import forms
 from .widgets import DateTimePicker
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm
 import datetime
 
 
+class PasswordChangeForms(PasswordChangeForm):
+
+    old_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'})
+                                 )
+    new_password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    new_password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+
+    error_messages = {
+
+        'password_incorrect': ("Your old password was incorrect."),
+        'password_mismatch':'The two password fields didn’t match.',
+    }
+    class Meta:
+
+        model = User
+
+        fields = (
+                  'old_password',
+                  'new_password1',
+                  'newpassword2',
+        )
 
 
 

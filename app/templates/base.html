@@ -29,20 +29,7 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
 
-          {% if user.is_authenticated %}
 
-         {% block auth-nav %}
-
-
-
-          {% endblock %}
-
-          {% else %}
-
-          <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
-
-
-{% endif %}
 
 
 
@@ -55,16 +42,18 @@
 
     {% if user.is_authenticated %}
 
+        {% block nav %}
+      <a href="/profile/{{user}}/password_change/">
+      <button type="button"  class="btn bg-purple text-white" style="margin-right:5px;"> Change Password </button>
+          </a>
+        {% endblock %}
     <form action="/logout/" method="post" style="padding:0px;margin:0px;">
         {% csrf_token %}
         <button type="submit" class="btn bg-purple text-white"> logout </button>
         </form>
 
-    {% else %}
-      {% block side-nav %}
-              <a href="../login" class="btn bg-light text-dark"> Login </a>
-              <a href="register/" class="btn bg-light text-dark"> Sign up </a>
-      {% endblock %}
+
+
     {% endif %}
 
 

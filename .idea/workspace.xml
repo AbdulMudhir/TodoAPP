@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="383d50a9-b3c3-42de-83c4-1773cc2c0fe7" name="Default Changelist" comment="polishing design">
-      <change afterPath="$PROJECT_DIR$/TodoAPP/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/static/app/images/logo.png" afterDir="false" />
+    <list default="true" id="383d50a9-b3c3-42de-83c4-1773cc2c0fe7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/templates/app/password_change.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoAPP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TodoAPP/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/app/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/app/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/app/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/app/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/home.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/app/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/app/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
@@ -158,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586995436577</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="removing homepage">
+      <created>1587036066546</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587036066546</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -173,22 +175,23 @@
     <MESSAGE value="users only see their task" />
     <MESSAGE value="designing to do list" />
     <MESSAGE value="polishing design" />
-    <option name="LAST_COMMIT_MESSAGE" value="polishing design" />
+    <MESSAGE value="removing homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing homepage" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1587036053708">
+    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1587036065793">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587036053708" />
+    <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587036065793" />
     <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587000047390" />
     <state x="1350" y="353" key="SettingsEditor" timestamp="1586896399792">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1350" y="353" key="SettingsEditor/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586896399792" />
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1586995437396">
+    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1587036068295">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1586995437396" />
+    <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587036068295" />
     <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1586991380441" />
     <state x="1161" y="407" width="672" height="678" key="search.everywhere.popup" timestamp="1586898050562">
       <screen x="0" y="0" width="2560" height="1400" />
