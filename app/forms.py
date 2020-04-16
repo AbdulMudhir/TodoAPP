@@ -6,12 +6,15 @@ from django.contrib.auth.models import User
 import datetime
 
 
-date_now = datetime.datetime.utcnow().strftime('%Y-%m-%d')
 
 
 
 class ToDoForm(forms.ModelForm):
+    date_now = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+
     title = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
+                                                          'onkeyup':"textCounter(this,'counter',100);",
+                                                          'id':'message'
                                                               }), required=True)
     content = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control',
                                                               }), required=True)

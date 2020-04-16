@@ -9,43 +9,33 @@
 {% endblock %}
 
 
-<h1> profile </h1>
 
 
+{% block auth-nav %}
 
-
-
-
-
-{% block nav %}
-
-{% if user.is_authenticated %}
-
-<form action="/logout/" method="post" style="padding:0px;margin:0px;">
-    {% csrf_token %}
-    <button type="submit" class="btn bg-light text-dark btn-block"> logout </button>
-    </form>
-
-{% else %}
-          <a href="../login" class="btn bg-light text-dark"> Login </a>
-          <a href="register/" class="btn bg-light text-dark"> Register </a>
-{% endif %}
+<a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
 
 {% endblock %}
+
+
+
 
 
 {% block body %}
 
 
-<br>
+
+
+<Br>
 
 <div class="container bg-light border">
     <br>
     <form method="post">
         {% csrf_token %}
         <div class="title">
-        <h6> Title </h6>
+        <h6> Title <input disabled class="bg-light" style="border:0;" maxlength="2" size=2" value="100" id="counter"> </h6>
         {{ form.title }}
+
             </div>
         <div class="content">
         <h6> To Do List </h6>
@@ -58,7 +48,7 @@
          {{ form.target_date }}
     </div>
         <br>
-        <button type="submit" class="btn btn-success"> Submit </button>
+        <button type="submit" class="btn btn-success"> Add </button>
             <button type="reset" class="btn btn-secondary">Clear</button>
         </form>
 
@@ -120,4 +110,18 @@
 </div>
 
 <Br>
+
+    <script>
+function textCounter(field,field2,maxlimit)
+{
+ var countfield = document.getElementById(field2);
+ if ( field.value.length > maxlimit ) {
+  field.value = field.value.substring( 0, maxlimit );
+  return false;
+ } else {
+  countfield.value = maxlimit - field.value.length;
+ }
+}
+</script>
+
 {% endblock %}

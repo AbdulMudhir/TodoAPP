@@ -40,7 +40,6 @@ def delete_task(request, item_id, user):
 
 def task_complete(request, item_id, user):
     if request.method == "POST":
-
         item = ToDoModel.objects.get(username_id=request.user.id, id=item_id)
         item.mark = True
         item.save()
@@ -65,7 +64,6 @@ def logout_profile(request):
 
 
 def task_not_complete(request, item_id, user):
-
     if request.method == "POST":
         item = ToDoModel.objects.get(username_id=request.user.id, id=item_id)
         item.mark = False
@@ -100,7 +98,13 @@ def login_profile(request):
         else:
             return render(request, 'app/login.html', {'error': 'Username or Password is incorrect'})
 
-    return render(request, 'app/login.html')
+    if request.method == "GET":
+
+        if request.user.is_authenticated:
+            return redirect('/')
+
+        else:
+            return render(request, 'app/login.html')
 
 
 def profile(request, user):
@@ -149,7 +153,10 @@ def register(request):
 
             return render(request, 'app/register.html', {'form': registered_user})
 
+    if request.method == "GET":
 
+        if request.user.is_authenticated:
+            return redirect('/')
 
-    else:
-        return render(request, 'app/register.html', {'form': RegistrationForm})
+        else:
+            return render(request, 'app/register.html', {'form': RegistrationForm})
