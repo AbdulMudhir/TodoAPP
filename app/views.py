@@ -2,7 +2,8 @@ from datetime import datetime
 
 from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
 from django.shortcuts import render, redirect
-
+from django.core.mail import send_mail
+from django.contrib import messages
 from .forms import RegistrationForm, PasswordChangeForms
 from .forms import ToDoForm
 from .models import ToDoModel
@@ -14,7 +15,7 @@ from .models import ToDoModel
 def password_change(request, user):
     if request.method == "POST":
 
-        form = PasswordChangeForms(user = request.user, data=request.POST)
+        form = PasswordChangeForms(user=request.user, data=request.POST)
 
         if form.is_valid():
 
@@ -29,7 +30,7 @@ def password_change(request, user):
     if request.method == "GET":
 
         if request.user.is_authenticated:
-            return render(request, 'app/password_change.html', {'form': PasswordChangeForms(user= request.user)})
+            return render(request, 'app/password_change.html', {'form': PasswordChangeForms(user=request.user)})
 
         else:
             return render(request, 'app/password_change.html', {'form': PasswordChangeForms(user=request.user)})
@@ -162,7 +163,7 @@ def register(request):
 
             registered_user.save()
 
-            return redirect('/login/')
+            return render(request,'app/login.html', {'success': 'Your account has been created successfully'})
 
         else:
 

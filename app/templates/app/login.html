@@ -36,10 +36,14 @@
          <div class="form-group">
     <label >Password</label>
     <input type="password" class='form-control' required="required" name="password">
+
+               <div class="container text-success text-center" style="margin-top:5px;">
+           {{ success }}
+       </div>
+
   </div>
 
     <p style="color:red; ">{{ error }} </p>
-
 
 
   <button type="submit" class="btn bg-purple text-white btn-block"> LOGIN </button>

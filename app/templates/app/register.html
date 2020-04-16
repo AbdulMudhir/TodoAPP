@@ -46,7 +46,7 @@
          <div class="form-group">
     <label >Email<span style="color:red;">*</span></label>
     {{ form.email }}
-             {{ form.email.errors }}
+             <div class="container-sm text-danger"> {{ form.email.errors.as_text }} </div>
   </div>
 
   <div class="form-group">
