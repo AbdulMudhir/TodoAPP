@@ -10,6 +10,9 @@ from django.contrib import messages
 from .forms import RegistrationForm, PasswordChangeForms
 from .forms import ToDoForm
 from .models import ToDoModel
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
 
 
 # Create your views here.
@@ -164,9 +167,21 @@ def register(request):
 
         if registered_user.is_valid():
 
-            registered_user.save()
-            messages.success(request, 'Your account has been created successfully.')
-            return redirect('/login')
+            username = registered_user.cleaned_data['username']
+            email = registered_user.cleaned_data['email']
+            password = registered_user.cleaned_data['password1']
+
+            user = User.objects.create_user(username=username, email=email, password=password)
+            user.is_active = False
+            user.save()
+
+            token = default_token_generator.make_token(user)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+
+            send_mail("Confirmation Email", f"http://localhost:8000/users/validate/{uid}/{token}",
+                      "todolistprojectgit@gmail.com", [email], fail_silently=True)
+
+            return render(request, 'app/activation_email_sent.html')
 
         else:
 
@@ -181,30 +196,14 @@ def register(request):
             return render(request, 'app/register.html', {'form': RegistrationForm})
 
 
-# def password_reset(request):
-#     if request.method == "POST":
-#         email = request.POST['email']
-#
-#         form = PasswordResetForm({'email': email})
-#
-#         if form.is_valid():
-#
-#             if User.objects.filter(email__iexact=email).exists():
-#
-#                 form.send_mail(subject_template_name="app/login.html",
-#                                from_email="todolistprojectgit@gmail.com",
-#                                to_email=email,
-#                                context=None,
-#                                email_template_name="app/login.html")
-#
-#                 #form.save()
-#
-#
-#
-#
-#         return redirect('/forgot_password/done')
-#     return render(request, 'app/password_reset.html')
-#
-# def password_reset_sent(request):
-#
-#     return render(request, 'app/password_reset_sent.html')
+def activation(request, uidb64, token):
+    uid = urlsafe_base64_decode(uidb64)
+
+    user = User.objects.get(pk=uid)
+
+    default_token_generator.check_token(user, token)
+
+    if user and default_token_generator:
+        user.is_active = True
+        user.save()
+        return render(request, 'app/activation_done.html')
