@@ -65,64 +65,58 @@
 </div>
 
 <br>
+
 <div class="container bg-light border">
     <Br>
-<div class="list-group">
+
     {% for info in data %}
+    <div class="card">
 
 
     {% if info.mark %}
-    <a  class="list-group-item list-group-item-action flex-column align-items-start bg-success text-white">
-    {% else %}
-         <a  class="list-group-item list-group-item-action flex-column align-items-start ">
-        {% endif %}
+        <div class="card-header bg-success">
+            {% else %}
+            <div class="card-header">
+              {% endif %}
+                <span style="font-weight:bold;">Deadline:</span> {{ info.target_date|date:"D d M Y" }}
+        </div>
 
-    <div class="d-flex w-100 justify-content-between "  style="border-bottom:1px solid;">
+  <div class="card-body">
+    <h5 class="card-title">{{ info.title|capfirst }}</h5>
+    <pre class="card-text">{{ info.content }}</pre>
 
-      <h5 class="mb-1"> {{ info.title|capfirst }}</h5>
-      <small> Created on: {{ info.date_created }}</small>
+
+  </div>
+
+
     </div>
-             <div class="container border">
 
-    <p class="mb-1">{{ info.content }}</p>
-
-                 </div>
-
-      <div class="container bg-danger">
-
-      <form action="/profile/{{ user }}/delete_task/{{ info.id }}/" method="post">
-          {% csrf_token %}
-      <button type="submit" class="btn btn-danger float-right"> Remove </button>
-          </form>
 {% if info.mark %}
-
-
-           <form action="task_not_complete/{{ info.id }}/" method="post">
+             <form action="task_not_complete/{{ info.id }}/" method="post" style="margin-bottom:0px; padding-bottom:0px;">
                     {% csrf_token %}
 
-     <button type="submit" class="btn btn-light float-right"> Uncheck </button>
-          </form>
-
-          {% else %}
-
-      <form action="task_complete/{{ info.id }}/" method="post">
-                    {% csrf_token %}
-
-     <button type="submit" class="btn btn-success float-right"> Check </button>
-
-
+     <button type="submit" class="btn btn-light btn-block"> Uncheck </button>
 
           </form>
 
 
-          {% endif %}
-          </div>
-                   <small>Target date : {{ info.target_date.date }}</small>
+         {% else %}
+     <form action="task_complete/{{ info.id }}/" method="post"  style="margin-bottom:0px; padding-bottom:0px;">
+                    {% csrf_token %}
 
-  </a>
-        <br>
+     <button type="submit" class="btn btn-success btn-block"> Check </button>
+
+          </form>
+
+{% endif %}
+           <form action="/profile/{{ user }}/delete_task/{{ info.id }}/" method="post">
+          {% csrf_token %}
+      <button type="submit" class="btn btn-danger btn-block"> Remove </button>
+          </form>
+
+
+
     {% endfor %}
-</div>
 </div>
 
 <Br>
