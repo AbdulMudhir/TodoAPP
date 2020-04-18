@@ -179,7 +179,7 @@ def register(request):
             user.is_active = False
             user.save()
 
-            token = default_token_generator.make_token(user)
+            # token = default_token_generator.make_token(user)
             # uid = urlsafe_base64_encode(force_bytes(user.pk))
 
             message = render_to_string('app/activation_email_template.html', {
