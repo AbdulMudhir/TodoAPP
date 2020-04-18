@@ -3,6 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="383d50a9-b3c3-42de-83c4-1773cc2c0fe7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0002_auto_20200414_2149.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0003_auto_20200414_2150.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0004_auto_20200414_2220.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0005_auto_20200414_2339.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0006_auto_20200415_0020.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0007_auto_20200415_0022.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0008_auto_20200415_1546.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0009_auto_20200415_1547.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0010_auto_20200415_1549.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0011_auto_20200415_1551.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0012_auto_20200415_1606.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0013_auto_20200415_1610.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0014_auto_20200415_1612.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0015_auto_20200415_1615.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0016_auto_20200415_1624.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0017_auto_20200415_2149.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0018_auto_20200415_2151.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/migrations/0019_auto_20200415_2249.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587244608589</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="heroku settings">
+      <created>1587244979775</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1587244979775</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -345,20 +371,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="heroku settings" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2934" y="25" key="CommitChangelistDialog2" timestamp="1587244607849">
+    <state x="2934" y="25" key="CommitChangelistDialog2" timestamp="1587244978962">
       <screen x="2560" y="0" width="1440" height="860" />
     </state>
     <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587241091480" />
-    <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587244607849" />
+    <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587244978962" />
     <state x="1350" y="353" key="SettingsEditor" timestamp="1587054762652">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1350" y="353" key="SettingsEditor/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587054762652" />
-    <state x="2872" y="164" key="Vcs.Push.Dialog.v2" timestamp="1587244609587">
+    <state x="2872" y="164" key="Vcs.Push.Dialog.v2" timestamp="1587244980863">
       <screen x="2560" y="0" width="1440" height="860" />
     </state>
     <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587241093172" />
-    <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587244609587" />
+    <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587244980863" />
     <state x="186" y="0" width="1899" height="1192" key="dock-window-1" timestamp="1587076077745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
