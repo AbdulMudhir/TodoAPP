@@ -1,0 +1,36 @@
+
+.bg-purple{
+background-color:#800080;
+}
+
+ .perfect-centering {
+     position: absolute;
+     top: 50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+   }
+
+
+ .child-centering {
+     position: relative;
+     top: 50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+   }
+
+.small-form{
+
+    position:relative;
+       vertical-align: middle;
+
+    width:50%;
+
+}
+
+.errorlist{
+        color: red;
+        margin:0;
+        padding-left:0;
+        font-size:14px;
+    }
+
