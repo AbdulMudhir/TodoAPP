@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
-
+import whitenoise
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
