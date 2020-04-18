@@ -5,6 +5,7 @@ from django.contrib.auth import logout, login, authenticate, update_session_auth
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import PasswordResetForm
 from django.shortcuts import render, redirect
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
 from django.contrib import messages
 from .forms import RegistrationForm, PasswordChangeForms
@@ -13,6 +14,7 @@ from .models import ToDoModel
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
+from django.template.loader import render_to_string
 
 
 # Create your views here.
@@ -171,14 +173,23 @@ def register(request):
             email = registered_user.cleaned_data['email']
             password = registered_user.cleaned_data['password1']
 
+            current_domain = get_current_site(request)
+
             user = User.objects.create_user(username=username, email=email, password=password)
             user.is_active = False
             user.save()
 
             token = default_token_generator.make_token(user)
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            # uid = urlsafe_base64_encode(force_bytes(user.pk))
 
-            send_mail("Confirmation Email", f"http://localhost:8000/users/validate/{uid}/{token}",
+            message = render_to_string('app/activation_email_template.html', {
+                'user': user,
+                'domain': current_domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': default_token_generator.make_token(user),
+            })
+
+            send_mail("Confirmation Email", message,
                       "todolistprojectgit@gmail.com", [email], fail_silently=True)
 
             return render(request, 'app/activation_email_sent.html')
@@ -203,10 +214,13 @@ def activation(request, uidb64, token):
 
     default_token_generator.check_token(user, token)
 
-    if user and default_token_generator:
-        user.is_active = True
-        user.save()
-        return render(request, 'app/activation_done.html')
+    if request.method == "GET":
 
-    else:
-        return redirect('/')
+        if user and default_token_generator:
+            user.is_active = True
+            user.save()
+            login(request, user)
+            return render(request, 'app/activation_done.html')
+
+        else:
+            return redirect('/')
