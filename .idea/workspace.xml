@@ -376,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587248917445</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="change language to python">
+      <created>1587249533419</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1587249533419</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -399,23 +406,24 @@
     <MESSAGE value="updated requirements.txt" />
     <MESSAGE value="heroku settings" />
     <MESSAGE value="fixed nav bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed nav bar" />
+    <MESSAGE value="change language to python" />
+    <option name="LAST_COMMIT_MESSAGE" value="change language to python" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="665" y="41" key="CommitChangelistDialog2" timestamp="1587248916751">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2934" y="25" key="CommitChangelistDialog2" timestamp="1587249532679">
+      <screen x="2560" y="0" width="1440" height="860" />
     </state>
     <state x="665" y="41" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587248916751" />
-    <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587247200354" />
+    <state x="2934" y="25" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587249532679" />
     <state x="1350" y="353" key="SettingsEditor" timestamp="1587054762652">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1350" y="353" key="SettingsEditor/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587054762652" />
-    <state x="555" y="267" key="Vcs.Push.Dialog.v2" timestamp="1587248918721">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="2872" y="164" key="Vcs.Push.Dialog.v2" timestamp="1587249534755">
+      <screen x="2560" y="0" width="1440" height="860" />
     </state>
     <state x="555" y="267" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@0.0.2560.1400" timestamp="1587248918721" />
-    <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587247204511" />
+    <state x="2872" y="164" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1440.860@2560.0.1440.860" timestamp="1587249534755" />
     <state x="186" y="0" width="1899" height="1192" key="dock-window-1" timestamp="1587076077745">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
